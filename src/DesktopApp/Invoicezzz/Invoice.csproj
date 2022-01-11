@@ -1,0 +1,116 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <StartupObject></StartupObject>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="CreateCatagory.cs" />
+    <Compile Remove="CreateCatagory.Designer.cs" />
+    <Compile Remove="CreateOrder.cs" />
+    <Compile Remove="CreateOrder.Designer.cs" />
+    <Compile Remove="CreateStore.cs" />
+    <Compile Remove="CreateStore.Designer.cs" />
+    <Compile Remove="DataSet1.cs" />
+    <Compile Remove="DataSet1.Designer.cs" />
+    <Compile Remove="DBLayoutPanel .cs" />
+    <Compile Remove="delieveryReport.cs" />
+    <Compile Remove="delieveryReport.Designer.cs" />
+    <Compile Remove="DeliverySchedule.cs" />
+    <Compile Remove="DeliverySchedule.Designer.cs" />
+    <Compile Remove="invoice_dbDataSet.cs" />
+    <Compile Remove="invoice_dbDataSet.Designer.cs" />
+    <Compile Remove="invoice_dbDataSet1.Designer.cs" />
+    <Compile Remove="OrderList.cs" />
+    <Compile Remove="OrderList.Designer.cs" />
+    <Compile Remove="printPreview.cs" />
+    <Compile Remove="printPreview.Designer.cs" />
+    <Compile Remove="printWeeklyReport.cs" />
+    <Compile Remove="printWeeklyReport.Designer.cs" />
+    <Compile Remove="ProductCollection.cs" />
+    <Compile Remove="ProductCollection.Designer.cs" />
+    <Compile Remove="ProductList.cs" />
+    <Compile Remove="ProductList.Designer.cs" />
+    <Compile Remove="ResizeForm.cs" />
+    <Compile Remove="StoreList.cs" />
+    <Compile Remove="StoreList.Designer.cs" />
+    <Compile Remove="TextBoxModified.cs" />
+    <Compile Remove="WeeklyExpense.cs" />
+    <Compile Remove="WeeklyExpense.Designer.cs" />
+    <Compile Remove="WeeklySale.cs" />
+    <Compile Remove="WeeklySale.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="CreateCatagory.resx" />
+    <EmbeddedResource Remove="CreateOrder.resx" />
+    <EmbeddedResource Remove="CreateStore.resx" />
+    <EmbeddedResource Remove="delieveryReport.resx" />
+    <EmbeddedResource Remove="DeliverySchedule.resx" />
+    <EmbeddedResource Remove="OrderList.resx" />
+    <EmbeddedResource Remove="printPreview.resx" />
+    <EmbeddedResource Remove="printWeeklyReport.resx" />
+    <EmbeddedResource Remove="ProductCollection.resx" />
+    <EmbeddedResource Remove="ProductList.resx" />
+    <EmbeddedResource Remove="StoreList.resx" />
+    <EmbeddedResource Remove="WeeklyExpense.resx" />
+    <EmbeddedResource Remove="WeeklySale.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="DataSet1.xsc" />
+    <None Remove="DataSet1.xsd" />
+    <None Remove="DataSet1.xss" />
+    <None Remove="delieveryReport.rdlc" />
+    <None Remove="Invoice.rdlc" />
+    <None Remove="invoice_dbDataSet.xsc" />
+    <None Remove="invoice_dbDataSet.xsd" />
+    <None Remove="invoice_dbDataSet.xss" />
+    <None Remove="invoice_dbDataSet1.xsc" />
+    <None Remove="invoice_dbDataSet1.xsd" />
+    <None Remove="invoice_dbDataSet1.xss" />
+    <None Remove="invoice_user.pfx" />
+    <None Remove="weeklyReport.rdlc" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.123" />
+    <PackageReference Include="MediatR" Version="10.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Report.Viewer" Version="11.0.0" />
+    <PackageReference Include="Microsoft.ReportingServices.ReportViewerControl.Winforms" Version="150.1484.0" />
+    <PackageReference Include="Microsoft.ReportViewer.Runtime.Common" Version="12.0.2402.15" />
+    <PackageReference Include="Microsoft.ReportViewer.Runtime.WinForms" Version="12.0.2402.15" />
+    <PackageReference Include="Microsoft.ReportViewer.VS2015.WinForms" Version="12.0.2.2402" />
+    <PackageReference Include="Microsoft.ReportViewer.WinForms" Version="10.0.40219.1" />
+    <PackageReference Include="Microsoft.SqlServer.Types" Version="14.0.1016.290" />
+    <PackageReference Include="MySql.Data" Version="8.0.27" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Invoice.Infrastructure\Invoice.Infrastructure.csproj" />
+    <ProjectReference Include="..\Invoice.Application\Invoice.Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+</Project>
