@@ -11,7 +11,7 @@ Invoice App from https://github.com/rdg7739/Invoice is a Windows Forms app with 
 - “Order List” – used to manage orders
 -	“Weekly Sale” – used to display weekly sale data for a selected week
 -	“Weekly Expense” – used to display weekly expenses data for a selected week
- 
+!(/documentation/UseCAses.png)
 
 ## Architecture overview
 
