@@ -11,7 +11,7 @@ Invoice App from https://github.com/rdg7739/Invoice is a Windows Forms app with 
 - “Order List” – used to manage orders
 -	“Weekly Sale” – used to display weekly sale data for a selected week
 -	“Weekly Expense” – used to display weekly expenses data for a selected week
-!(/documentation/UseCAses.png)
+![UseCases](/documentation/UseCAses.png)
 
 ## Architecture overview
 
@@ -21,8 +21,12 @@ Based on these use cases I would divide this to following microservices:
 -	Order microservice – a service to manage and create orders
 -	Reporting microservice – a service to manage / provide data for reporting
 -	Gateway – a service used to orchestrate services
+
+![environment](/documentation/InvoiceERP_EnvironmentArchitecture.png)
  
 In this solution services are loosely coupled, and they are working with only their domain. Orchestration of the request is done by Gateway – Ocelot which will either route requests to specific microservice or orchestrate data for requests / responses. To ensure communication between services I would use an Event Bus (which could be RabbitMq or Azure Service Bus). In this case it involves communication between Order microservice and Report microservice, where Order service would publish new event after creating an order, which would be then processed by Report service and included in report data (described by Create order activity diagram below).
+
+![sampleActivityDiagram](/documentation/CreateOrderActivityDiagram..png)
 
  
 ## Example implementation description
@@ -44,5 +48,13 @@ For the UI I’ve used the Windows Forms App from the solution that was analyzed
 -	Category list (add, update, delete category)
 
 The repository contains also example folder structure for test (UnitTests and PerformanceTests)
+
+To run the app use Multiple Startup Projects settings in solution properties and set these projects to start:
+-	Invoice.App
+-	Store.Api
+-	Product.Api
+
+Db connection strings are set to target (local) sql server!
+
 
 
