@@ -1,6 +1,6 @@
-#Invoice App Analysis and Microservices Architecture design
+# Invoice App Analysis and Microservices Architecture design
 
-##Analysis
+## Analysis
 
 Invoice App from https://github.com/rdg7739/Invoice is a Windows Forms app with local database, with all business logic hardcoded in app. The app handles several use cases described below
 -	“My Store”– used to manage contact data about our store.
@@ -13,7 +13,7 @@ Invoice App from https://github.com/rdg7739/Invoice is a Windows Forms app with 
 -	“Weekly Expense” – used to display weekly expenses data for a selected week
  
 
-##Architecture overview
+## Architecture overview
 
 Based on these use cases I would divide this to following microservices:
 -	Store microservice – a service to manage data about “My Store” and the “Customer” / “Supplier”
@@ -25,7 +25,7 @@ Based on these use cases I would divide this to following microservices:
 In this solution services are loosely coupled, and they are working with only their domain. Orchestration of the request is done by Gateway – Ocelot which will either route requests to specific microservice or orchestrate data for requests / responses. To ensure communication between services I would use an Event Bus (which could be RabbitMq or Azure Service Bus). In this case it involves communication between Order microservice and Report microservice, where Order service would publish new event after creating an order, which would be then processed by Report service and included in report data (described by Create order activity diagram below).
 
  
-##Example implementation description
+## Example implementation description
 
 In the example implementation of the services I’ve created separate projects for Order, Product and Store microservices, they are build on .net 5 with Entity Framework (Code First) for data persistence, each service has its own database, using Clean Architecture approach with MediatR for CQRS.
 In a production environment each service / client app would have it’s own repository, that would be used for CI/CD.
