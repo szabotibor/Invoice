@@ -41,7 +41,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Order.Infrastructure", "src
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Invoice.Application", "src\DesktopApp\Invoice.Application\Invoice.Application.csproj", "{126DFBA9-5958-4E7E-B7C0-3CCD8AB1E8CF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Invoice.Infrastructure", "Invoice.Infrastructure\Invoice.Infrastructure.csproj", "{55EE1285-BE4E-40A2-B49D-F3ABE7059A44}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Invoice.Infrastructure", "src\DesktopApp\Invoice.Infrastructure\Invoice.Infrastructure.csproj", "{55EE1285-BE4E-40A2-B49D-F3ABE7059A44}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
